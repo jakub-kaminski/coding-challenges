@@ -1,0 +1,6 @@
+MACRO(CURRENT_DIR_NAME result curdir)
+  get_filename_component(dir1 "${curdir}" ABSOLUTE)
+  get_filename_component(dir2 "${curdir}/../" ABSOLUTE)
+  string(REPLACE "${dir2}/" "" output "${dir1}")
+  SET(${result} "${output}")
+ENDMACRO()
